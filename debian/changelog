@@ -1,0 +1,5 @@
+policy-rc.d (0.0.1) UNRELEASED; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- geoffrey papilion <geoffp@sputnik>  Sat, 24 Nov 2012 00:00:23 -0800
