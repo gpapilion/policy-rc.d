@@ -46,7 +46,8 @@ elif [ "$1" == "--set-system-default" ]; then
   shift; 
   check_status $1
   shift
-  echo $STATUS > $POLICY_PATH/default-policy
+  mkdir -p $POLICY_PATH/default-policy
+  echo $STATUS > $POLICY_PATH/default-policy/default-policy
 elif [ "$1" == "--del" ]; then
   shift;
   INIT_ID=$1; 
@@ -56,5 +57,5 @@ elif [ "$1" == "--del-system-default" ]; then
   shift;
   INIT_ID=$1; 
   shift; 
-  rm $POLICY_PATH/default-policy
+  rm $POLICY_PATH/default-policy/default-policy
 fi
