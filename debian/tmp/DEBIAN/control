@@ -1,9 +1,0 @@
-Package: policy-rc.d
-Version: 0.0.1
-Architecture: all
-Maintainer: Geoffrey Papilion <geoffp@wikia-inc.com>
-Installed-Size: 36
-Section: misc
-Priority: optional
-Description: greet user
- hithere greets the user, or the world.
