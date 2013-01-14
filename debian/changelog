@@ -1,3 +1,9 @@
+policy-rc.d (0.0.2ubuntu1) precise; urgency=low
+
+  * Change install location /usr/sibn (Closes: Issue4)
+
+ -- geoffrey papilion <geoffp@sputnik>  Sun, 13 Jan 2013 21:38:20 -0800
+
 policy-rc.d (0.0.1) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #XXXXXX)
