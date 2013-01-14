@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.68])
 AC_INIT([policy-rc.d], [0.0.1], [geoffp@wikia-inc.com])
-AC_PREFIX_DEFAULT()
+AC_PREFIX_DEFAULT(/usr)
 AM_INIT_AUTOMAKE(policy-rc.d, 0.0.1)
 AC_OUTPUT(Makefile scripts/Makefile)
 

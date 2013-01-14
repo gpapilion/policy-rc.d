@@ -564,7 +564,7 @@ PACKAGE_STRING='policy-rc.d 0.0.1'
 PACKAGE_BUGREPORT='geoffp@wikia-inc.com'
 PACKAGE_URL=''
 
-ac_default_prefix=
+ac_default_prefix=/usr
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
 am__untar
