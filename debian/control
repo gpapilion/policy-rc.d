@@ -1,12 +1,12 @@
 Source: policy-rc.d
-Maintainer: Geoffrey Papilion <geoffp@wikia-inc.com>
+Maintainer: Geoffrey Papilion <papilion@hypergeometric.com>
 Section: misc
 Priority: optional
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 8)
+Build-Depends: debhelper (>= 8), automake (=1:1.11.3-1ubuntu2)
 
 Package: policy-rc.d
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: greet user
- hithere greets the user, or the world.
+Description: policy-rc.d
+ this package setups a policy-rc.d implementation
