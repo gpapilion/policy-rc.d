@@ -5,7 +5,7 @@
 # update-policy-rc.d [--set|--set-system-default|--del|--del-system-default] [<init-id>] 
 #                    [enable|disable]
 #
-# Simple script to update policy-rc.d setting for matchin /usr/sbin/policy-rc.d script.
+# Simple script to update policy-rc.d setting for matching /usr/sbin/policy-rc.d script.
 #
 # usage examples: 
 #  Disable invoke-rc.d apache2: 
@@ -34,7 +34,8 @@ check_status(){
   fi
 }
 
-if [ "$1" == "--set" ]; then
+case $1 in
+"--set")
   shift;
   INIT_ID=$1; 
   shift; 
@@ -42,20 +43,50 @@ if [ "$1" == "--set" ]; then
   shift
   mkdir -p $POLICY_PATH/$INIT_ID
   echo $STATUS > $POLICY_PATH/$INIT_ID/default-policy
-elif [ "$1" == "--set-system-default" ]; then
+  ;;
+
+"--set-ssytem-default")
   shift; 
   check_status $1
   shift
   mkdir -p $POLICY_PATH/default-policy
   echo $STATUS > $POLICY_PATH/default-policy/default-policy
-elif [ "$1" == "--del" ]; then
+  ;;
+
+"--del")
   shift;
   INIT_ID=$1; 
   shift; 
   rm $POLICY_PATH/$INIT_ID/default-policy
-elif [ "$1" == "--del-system-default" ]; then
+  ;;
+
+"--del-system-default")
   shift;
   INIT_ID=$1; 
   shift; 
   rm $POLICY_PATH/default-policy/default-policy
-fi
+  ;;
+
+*)
+  echo " update-policy-rc.d [--set|--set-system-default|--del|--del-system-default] [<init-id>] "
+  echo "                    [enable|disable]"
+  echo ""
+  echo " Simple script to update policy-rc.d setting for matching /usr/sbin/policy-rc.d script."
+  echo ""
+  echo " usage examples: "
+  echo "  Disable invoke-rc.d apache2: "
+  echo "        update-policy-rc.d --set apache2 disable"
+  echo ""
+  echo "  Enable invoke-rc.d apache2: "
+  echo "        update-policy-rc.d --set apache2 enable"
+  echo ""
+  echo "  Disable invoke-rc.d from starting daemons: "
+  echo "        update-policy-rc.d --set-system-default disable"
+  echo ""
+  echo "  Remove system wide default config: "
+  echo "        update-policy-rc.d --del-system-default   "
+  echo ""
+  ;;
+
+esac
+
